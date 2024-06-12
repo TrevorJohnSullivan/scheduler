@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-
 import "components/InterviewerList.scss";
-
 import InterviewerListItem from "components/InterviewerListItem";
 
 function InterviewerList(props) {
@@ -28,9 +26,15 @@ function InterviewerList(props) {
 }
 
 InterviewerList.propTypes = {
+  interviewers: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      avatar: PropTypes.string.isRequired
+    })
+  ).isRequired,
   value: PropTypes.number,
-  onChange: PropTypes.func.isRequired,
-  interviewers: PropTypes.array.isRequired
+  onChange: PropTypes.func.isRequired
 };
 
 export default InterviewerList;
