@@ -40,7 +40,4 @@ it("loads data, books an interview and reduces the spots remaining for Monday by
 
 
 });
-
-
-
 });
